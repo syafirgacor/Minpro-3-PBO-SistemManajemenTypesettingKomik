@@ -6,39 +6,47 @@ package controllers;
 
 import java.util.ArrayList;
 import model.*;
+import interfaces.IProyekService;
 
 /**
  *
  * @author user
  */
-public class ProyekController {
-    private ArrayList<ProyekTypeset> daftarProyek = new ArrayList<>();
+public class ProyekController implements IProyekService {
+    private final ArrayList<ProyekTypeset> daftarProyek = new ArrayList<>();
 
     public ProyekController() {
-        // Dummy Data Awal
-        Komik k1 = new Komik("K01", "Solo Leveling", "Action");
-        Typesetter t1 = new TypesetterTetap("TS01", "Syafir", 3000000);
-        daftarProyek.add(new ProyekTypeset("PRJ01", k1, t1, 100, "Selesai"));
+        Komik komik1 = new Komik("K01", "Solo Leveling", "Action");
+        Typesetter ts1 = new TypesetterTetap("TS01", "Ahzami", 3500000);
+        daftarProyek.add(new ProyekTypeset("PRJ01", komik1, ts1, 100, "Dalam Pengerjaan"));
     }
 
-    public ArrayList<ProyekTypeset> getDaftarProyek() {
-        return daftarProyek;
-    }
-
+    @Override
     public void tambahProyek(ProyekTypeset proyek) {
         daftarProyek.add(proyek);
     }
 
-    public boolean ubahProyek(int index, int chapterBaru, String statusBaru) {
+    @Override
+    public ArrayList<ProyekTypeset> getAllProyek() {
+        return daftarProyek;
+    }
+
+    @Override
+    public boolean updateProyek(int index, Integer chapterBaru, String statusBaru) {
         if (index >= 0 && index < daftarProyek.size()) {
             ProyekTypeset p = daftarProyek.get(index);
-            p.setChapter(chapterBaru);
-            p.setStatus(statusBaru);
+            if (chapterBaru != null) {
+                p.setChapter(chapterBaru);
+            }
+            if (statusBaru != null && !statusBaru.trim().isEmpty()) {
+                p.setStatus(statusBaru);
+            }
             return true;
         }
         return false;
     }
 
+    @Override
     public boolean hapusProyek(int index) {
         if (index >= 0 && index < daftarProyek.size()) {
             daftarProyek.remove(index);

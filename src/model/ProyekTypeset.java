@@ -9,9 +9,9 @@ package model;
  * @author user
  */
 public class ProyekTypeset {
-    private String idProyek;
+    private final String idProyek; 
     private Komik komik;
-    private Typesetter typesetter;
+    private Typesetter typesetter; 
     private int chapter;
     private String status;
 
@@ -23,54 +23,14 @@ public class ProyekTypeset {
         this.status = status;
     }
 
-    
-    public String getIdProyek() {
-        return idProyek;
-    }
+    public String getIdProyek() { return idProyek; }
+    public Komik getKomik() { return komik; }
+    public Typesetter getTypesetter() { return typesetter; }
+    public int getChapter() { return chapter; }
+    public String getStatus() { return status; }
 
-    public void setIdProyek(String idProyek) {
-        this.idProyek = idProyek;
-    }
-
-    public Komik getKomik() {
-        return komik;
-    }
-
-    public void setKomik(Komik komik) {
-        this.komik = komik;
-    }
-
-    public Typesetter getTypesetter() {
-        return typesetter;
-    }
-
-    public void setTypesetter(Typesetter typesetter) {
-        this.typesetter = typesetter;
-    }
-
-    public int getChapter() {
-        return chapter;
-    }
-
-    
-    public void setChapter(int chapter) {
-        if (chapter > 0) {
-            this.chapter = chapter;
-        } else {
-            System.out.println("[PERINGATAN] Nomor chapter harus lebih dari 0!");
-        }
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-
-    public void setStatus(String status) {
-        if (status != null && !status.trim().isEmpty()) {
-            this.status = status;
-        } else {
-            System.out.println("[PERINGATAN] Status pengerjaan tidak boleh kosong!");
-        }
-    }
+    public void setKomik(Komik komik) { this.komik = komik; }
+    public void setTypesetter(Typesetter typesetter) { this.typesetter = typesetter; }
+    public void setChapter(int chapter) { this.chapter = chapter; }
+    public void setStatus(String status) { this.status = status; }
 }

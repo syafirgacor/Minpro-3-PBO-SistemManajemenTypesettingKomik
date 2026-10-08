@@ -23,9 +23,8 @@ public class Minpro1PBOSistemManajemenTypesettingKomik {
 
     public static void main(String[] args) {
 
-        // DUMMY DATA AWAL (Menerapkan Inheritance & Subclass)
         Komik komik1 = new Komik("K01", "Solo Leveling", "Action");
-        Typesetter ts1 = new TypesetterTetap("TS01", "Ahzami", 3000000); // Menggunakan Subclass
+        Typesetter ts1 = new TypesetterTetap("TS01", "Ahzami", 3000000);
         daftarProyek.add(new ProyekTypeset("PRJ01", komik1, ts1, 100, "Dalam Pengerjaan"));
 
         int pilihan = 0;
