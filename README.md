@@ -1,5 +1,8 @@
 #  Minpro-3-PBO-SistemManajemenTypesettingKomik
 
+## Syafir Ahzami
+## 2509116074
+
 Sistem Manajemen Typesetting Komik berbasis CLI (Command Line Interface) yang dikembangkan menggunakan bahasa pemrograman Java. Program ini dirancang untuk mengelola alur pengerjaan proyek typesetting komik, data komik, serta data typesetter (baik status Tetap maupun Magang) dengan mengintegrasikan arsitektur Model-View-Controller (MVC), prinsip Abstraction, Polymorphism, Encapsulation, Inheritance, serta Interface.
 
 ---
